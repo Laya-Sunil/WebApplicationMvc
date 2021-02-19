@@ -7,6 +7,7 @@ function validate() {
     var mail = document.forms["register-form"]["EmailId"].value;
     var name = document.getElementById("uname").value;
     var nameRegex = /(^[A-Z][a-z]{3,9}$)/;
+    // Name Validating
     if (!name.match(mailRegex)) {
         alert("Invalid name");
         return false;
