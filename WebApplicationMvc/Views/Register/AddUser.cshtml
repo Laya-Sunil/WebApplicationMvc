@@ -1,0 +1,62 @@
+﻿@model WebApplicationMvc.Models.User
+
+@{
+    ViewBag.Title = "AddUser";
+}
+
+<h2>AddUser</h2>
+
+
+    @Scripts.Render("~/Scripts/myScript.js")
+
+
+
+@using (Html.BeginForm("AddUser", "Register", FormMethod.Post, new { name = "register-form", onsubmit = "return validate()" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="regForm">
+        <table>
+            <tr>
+                <td>@Html.LabelFor(m => m.Name)</td>
+                <td>@Html.TextBoxFor(m => m.Name, new { id = "uname" })</td>
+                @Html.ValidationMessageFor(m => m.Name)
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.EmailId)</td>
+                <td>@Html.TextBoxFor(m => m.EmailId)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Gender)</td>
+                <td>
+                    Male    @Html.RadioButtonFor(m => m.Gender, "Male")
+                    Female  @Html.RadioButtonFor(m => m.Gender, "Female")
+                </td>
+            </tr>
+            <td>@Html.LabelFor(m => m.Subscription)</td>
+            <td>
+                @Html.DropDownList("Subscription", new List<SelectListItem>
+                {
+                    new SelectListItem {Text="Weekly", Value="Weekly", Selected=true},
+                    new SelectListItem {Text="Monthly", Value="Monthly" },
+                    new SelectListItem {Text="Yearly", Value="Yearly"}
+                }, "Select Subscription")
+                @Html.ValidationMessageFor(model => model.Subscription, "", new { @class = "text-danger" })
+            </td>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit" class="submitBtn"/>
+                </td>
+
+            </tr>
+            <tr></tr>
+
+
+        </table>
+        <div><label>@ViewBag.Message</label></div>
+    </div>
+
+}
+<br>
+<div>
+    @Html.ActionLink("Back to List", "AllUsers", "Register")
+</div>

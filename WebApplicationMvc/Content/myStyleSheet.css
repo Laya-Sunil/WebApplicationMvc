@@ -1,0 +1,91 @@
+﻿body {
+    background-color: white;
+}
+
+.container {
+    background-color: darkslategrey;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+h1 {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.form-body {
+    padding: 50px;
+    margin: 80px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }
+
+nav-right {
+    right: 0;
+}
+
+h2 {
+    color: brown;
+}
+
+td {
+    height: 30px;
+    padding-right: 20px;
+    font-size: medium;
+}
+
+input {
+    width: 140px;
+}
+
+    input[type=radio] {
+        width: auto;
+    }
+
+    input[type=submit] {
+        background-color: green;
+        height: 30px;
+    }
+
+    input[type=reset] {
+        background-color: black;
+        color: white;
+        height: 30px;
+    }
+
+td > span {
+    color: firebrick;
+}
