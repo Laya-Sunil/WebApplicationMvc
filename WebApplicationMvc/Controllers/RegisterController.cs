@@ -29,7 +29,7 @@ namespace WebApplicationMvc.Controllers
             ViewBag.Message = "Successfully registered";
             return View();
         }
-       
+       // All users
         public ActionResult AllUsers() 
         {
             return View();
